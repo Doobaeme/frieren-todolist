@@ -7,52 +7,45 @@
 
 // document.body.appendChild(bgImage);
 
-const images = [
-  "img1.jpg",
-  "img2.jpg",
-  "img3.jpg",
-  "img4.jpg",
-  "img5.jpg",
-  "img6.jpg",
-  "img7.jpg",
-  "img8.jpg",
-  "img9.jpg",
-  "img10.jpg",
-];
-
-let currentIndex = 0;
-const backgroundElement = document.getElementById("background");
+const backgroundElement = document.getElementById("slider-container");
+const slider = document.getElementById("slider");
+const slides = document.querySelectorAll(".slide");
 const prevButton = document.getElementById("prev");
 const nextButton = document.getElementById("next");
 
-function updateBackground(index) {
-  backgroundElement.style.opacity = "0";
-  setTimeout(() => {
-    backgroundElement.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/${images[index]}')`;
-    backgroundElement.style.opacity = "1";
-  }, 1000);
+let currentIndex = 0;
+
+function updateSlider() {
+  const offset = -currentIndex * 100;
+  slider.style.transform = `translateX(${offset}%)`;
 }
 
-prevButton.addEventListener("click", () => {
-  if (savedUsername !== null) {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    updateBackground(currentIndex);
-  }
-});
-
-nextButton.addEventListener("click", () => {
-  if (savedUsername !== null) {
-    currentIndex = (currentIndex + 1) % images.length;
-    updateBackground(currentIndex);
-  }
-});
-
-if (savedUsername === null) {
-  backgroundElement.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/frieren.jpg')`;
-  prevButton.style.display = "none";
-  nextButton.style.display = "none";
-} else {
-  backgroundElement.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/${images[currentIndex]}')`;
-  prevButton.style.display = "block";
-  nextButton.style.display = "block";
+function handlePrevClick() {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  updateSlider();
 }
+
+function handleNextClick() {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateSlider();
+}
+
+function initializeBackground() {
+  if (savedUsername === null) {
+    backgroundElement.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/frieren.jpg')`;
+    prevButton.style.display = "none";
+    nextButton.style.display = "none";
+    slider.style.display = "none";
+  } else {
+    backgroundElement.style.backgroundImage = "none";
+    slider.style.display = "flex";
+    updateSlider();
+    prevButton.style.display = "block";
+    nextButton.style.display = "block";
+
+    prevButton.addEventListener("click", handlePrevClick);
+    nextButton.addEventListener("click", handleNextClick);
+  }
+}
+
+initializeBackground();
