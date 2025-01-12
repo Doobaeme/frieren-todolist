@@ -1,0 +1,81 @@
+#before-login.hidden {
+  display: none;
+}
+
+#before-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#before-login h1 {
+  color: white;
+  font-size: 60px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form input {
+  outline: none;
+  background: none;
+  text-align: center;
+  color: white;
+}
+
+.login-form input:first-of-type {
+  border-width: 0 0 2px;
+  border-color: rgba(255, 255, 255, 1);
+  font-size: 34px;
+}
+
+.login-form input:last-of-type {
+  border: none;
+  margin-top: 10px;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.login-form input::placeholder {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  padding-bottom: 3px;
+}
+
+.intro-play {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.intro-play:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.intro-play:hover {
+  box-shadow: 3px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.intro-play span {
+  font-size: 15px;
+  font-weight: 500;
+}

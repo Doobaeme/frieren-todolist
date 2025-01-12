@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/intro.css" />
+    <link rel="stylesheet" href="css/before-login.css">
+    <link rel="stylesheet" href="css/after-login.css">
+    <title>Momentum App</title>
+  </head>
+
+  <body>
+  <main>
+    <div id="before-login" class="hidden">
+      <h1>용사여, 당신은 누구인가요?</h1>
+
+    <form class="login-form">
+      <input
+        required
+        type="text"
+        placeholder="당신의 이름은?"
+        onfocus="this.placeholder=''"
+        onblur="this.placeholder='당신의 이름은?'"
+        maxlength="15"
+      />
+      <input type="submit" value="여정 떠나기 ▶"></input>
+    </form>
+
+    <button class="intro-play">
+      <span>인트로 재생</span>
+    </button>
+    </div>
+
+    <div id="after-login" class="hidden">
+      <div class="time">
+        <span>여행자의 시간</span>
+      <span class="clock">00:00:00</span>
+    </div>
+    
+      <h2 class="greeting"></h2>
+      
+      <form class="todo-form">
+        <input type="text" placeholder="기억을 남겨주세요." onfocus="this.placeholder=''"
+        onblur="this.placeholder='기억을 남겨주세요.'" required>
+      </form>
+
+      <ul class="todo-list"></ul>
+      
+      <div class="weather">
+        <span></span>
+        <!-- <img class="weather_icon" src="" alt="Weather Icon" /> -->
+        <span></span>
+      </div>
+
+      <div class="quote">
+        <span class="kr-quot"></span>
+        <span class="kr-author"></span>
+        <br>
+        <span class="jp-quot"></span>
+        <span class="jp-author"></span>
+      </div>
+
+      <button class="logout_button">기록 종료</button>
+    </div>
+  </main>
+
+  <div id="background"></div>
+
+  <div id="intro">
+    <div class="first-intro">
+      <span>장송의 프리렌</span>
+      <span>Frieren</span>
+    </div>
+    <div class="second-intro">
+      <span>여정의 끝에서</span>
+      <span>Beyond Journey's End</span>
+    </div>
+    <div class="last-intro">
+      <span>새로운 여정이 시작된다</span>
+      <span>A new journey begins</span>
+    </div>
+  </div>
+    <!-- 스크립트 -->
+    <script src="js/greetings.js"></script>
+    <script src="js/intro.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/weather.js"></script>
+  </body>
+
+</html>
