@@ -36,5 +36,5 @@ if (savedUsername === null) {
   backgroundElement.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/frieren.jpg')`;
 } else {
   setBackgroundForAfterLogin();
-  setInterval(setBackgroundForAfterLogin, 100000);
+  setInterval(setBackgroundForAfterLogin, 10000);
 }
