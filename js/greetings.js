@@ -31,6 +31,7 @@ function onLoginSubmit(event) {
   afterContents.classList.remove(HIDDEN_CLASSNAME);
   localStorage.setItem(USERNAME_KEY, typedUsername);
   paintGreetings(typedUsername);
+  window.location.reload();
 }
 
 // 로컬스토리지 정보가 있을 경우 h1 출력 기능
