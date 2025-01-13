@@ -18,8 +18,8 @@ if (!introShown) {
 const introButton = document.querySelector(".intro-play");
 
 introButton.addEventListener("click", () => {
-  intro.classList.remove("hidden");
+  intro.classList.remove(HIDDEN_CLASSNAME);
   setTimeout(() => {
-    intro.classList.add("hidden");
+    intro.classList.add(HIDDEN_CLASSNAME);
   }, 11000);
 });

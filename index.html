@@ -18,7 +18,7 @@
       <i class="prev-track fa-solid fa-backward"></i>
       <i class="play-pause fa-solid fa-play"></i>
       <i class="next-track fa-solid fa-forward"></i>
-      <audio class="audio-player" src="music/frieren_ost1.mp3" autoplay></audio>
+      <audio id="intro-audio" class="audio-player" src="music/frieren_ost1.mp3" autoplay></audio>
     </div>
 
     <div id="before-login" class="hidden">
@@ -93,19 +93,18 @@
     <button id="next" class="arrow">▶</button>
 </div>
 
-  <div id="intro">
-    <div class="first-intro">
-      <span>장송의 프리렌</span>
-      <span>Frieren</span>
-    </div>
-    <div class="second-intro">
-      <span>여정의 끝에서</span>
-      <span>Beyond Journey's End</span>
-    </div>
-    <div class="last-intro">
-      <span>새로운 여정이 시작된다</span>
-      <span>A new journey begins</span>
-    </div>
+<div id="intro">
+  <div class="first-intro hidden">
+    <span>장송의 프리렌</span>
+    <span>Frieren</span>
+  </div>
+  <div class="second-intro hidden">
+    <span>여정의 끝에서</span>
+    <span>Beyond Journey's End</span>
+  </div>
+  <div class="last-intro hidden">
+    <span>새로운 여정이 시작된다</span>
+    <span>A new journey begins</span>
   </div>
     <!-- 스크립트 -->
     <script src="js/greetings.js"></script>

@@ -23,3 +23,7 @@
 #soundbar i:hover {
   color: #ffcc00;
 }
+
+#soundbar.hidden {
+  display: none;
+}

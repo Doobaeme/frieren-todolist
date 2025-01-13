@@ -3,52 +3,53 @@ document.addEventListener("DOMContentLoaded", () => {
   const playPauseButton = document.querySelector(".play-pause");
   const prevTrackButton = document.querySelector(".prev-track");
   const nextTrackButton = document.querySelector(".next-track");
+  const soundbar = document.getElementById("soundbar");
+  const intro = document.getElementById("intro");
 
   const tracks = ["music/frieren_ost1.mp3", "music/frieren_ost2.mp3"];
   let currentTrackIndex = 0;
+  let userInteracted = false;
 
-  // 초기 설정
-  function initializeAudio() {
+  // 초기 설정 및 아이콘 상태 업데이트
+  const initializeAudio = () => {
     audioPlayer.src = tracks[currentTrackIndex];
-    audioPlayer.volume = 0.7;
-  }
-  initializeAudio();
+    audioPlayer.volume = 0.5; // 볼륨 50%
+    updatePlayPauseIcon();
+  };
 
-  // 재생/일시정지 토글
-  function togglePlayPause() {
-    if (audioPlayer.paused) {
-      audioPlayer.play();
-      playPauseButton.classList.remove("fa-play");
-      playPauseButton.classList.add("fa-pause");
-    } else {
-      audioPlayer.pause();
-      playPauseButton.classList.remove("fa-pause");
-      playPauseButton.classList.add("fa-play");
-    }
-  }
+  // 아이콘 상태 업데이트
+  const updatePlayPauseIcon = () => {
+    playPauseButton.classList.toggle("fa-pause", !audioPlayer.paused);
+    playPauseButton.classList.toggle("fa-play", audioPlayer.paused);
+  };
 
-  // 이전 곡 재생
-  function playPrevTrack() {
-    currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
-    updateTrack();
-  }
-
-  // 다음 곡 재생
-  function playNextTrack() {
-    currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
-    updateTrack();
-  }
-
-  // 트랙 업데이트
-  function updateTrack() {
+  // 트랙 업데이트 및 자동 재생
+  const updateTrack = (direction) => {
+    currentTrackIndex =
+      (currentTrackIndex + direction + tracks.length) % tracks.length;
     audioPlayer.src = tracks[currentTrackIndex];
     audioPlayer.play();
-    playPauseButton.classList.remove("fa-play");
-    playPauseButton.classList.add("fa-pause");
-  }
+    updatePlayPauseIcon();
+  };
+
+  // #intro가 화면에 나타나면 사운드바 숨기기
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      soundbar.classList.toggle("hidden", entry.isIntersecting);
+      if (entry.isIntersecting && userInteracted) audioPlayer.play();
+    });
+  });
+  observer.observe(intro);
 
   // 이벤트 리스너
-  playPauseButton.addEventListener("click", togglePlayPause);
-  prevTrackButton.addEventListener("click", playPrevTrack);
-  nextTrackButton.addEventListener("click", playNextTrack);
+  playPauseButton.addEventListener("click", () =>
+    audioPlayer.paused ? audioPlayer.play() : audioPlayer.pause()
+  );
+  prevTrackButton.addEventListener("click", () => updateTrack(-1));
+  nextTrackButton.addEventListener("click", () => updateTrack(1));
+  audioPlayer.addEventListener("play", updatePlayPauseIcon);
+  audioPlayer.addEventListener("pause", updatePlayPauseIcon);
+
+  // 초기화 호출
+  initializeAudio();
 });
