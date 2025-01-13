@@ -33,6 +33,8 @@ function handleNextClick() {
 function initializeBackground() {
   if (savedUsername === null) {
     backgroundElement.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/frieren.jpg')`;
+    backgroundElement.style.backgroundRepeat = "no-repeat";
+    backgroundElement.style.backgroundSize = "cover";
     prevButton.style.display = "none";
     nextButton.style.display = "none";
     slider.style.display = "none";

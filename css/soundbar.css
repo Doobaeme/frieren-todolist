@@ -2,28 +2,19 @@
   position: fixed;
   top: 10px;
   right: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   background: rgba(0, 0, 0, 0.8);
-  border-radius: 20px;
-  padding: 8px 10px;
+  padding: 5px 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  z-index: 1000;
 }
 
-#soundbar i {
-  color: white;
+.play-pause {
+  display: inline-block; /* 버튼이 항상 표시되도록 설정 */
   font-size: 18px;
-  margin: 0 8px;
+  color: white;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
-#soundbar i:hover {
+.play-pause:hover {
   color: #ffcc00;
-}
-
-#soundbar.hidden {
-  display: none;
 }

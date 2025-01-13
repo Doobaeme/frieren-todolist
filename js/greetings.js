@@ -14,16 +14,10 @@ const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
 const CHARACTER_KEY = "character";
 
-// 캐릭터 선택 이벤트 리스너 추가
 characterImages.forEach((img) => {
   img.addEventListener("click", () => {
-    // 기존 선택된 상태 초기화
     characterImages.forEach((char) => char.classList.remove("selected"));
-
-    // 선택한 이미지에 'selected' 클래스 추가
     img.classList.add("selected");
-
-    // 선택한 캐릭터의 alt 값을 저장
     localStorage.setItem(CHARACTER_KEY, img.alt);
   });
 });
@@ -62,6 +56,7 @@ function onLoginSubmit(event) {
   localStorage.setItem(USERNAME_KEY, typedUsername);
   paintGreetings(typedUsername);
   displayCharacterImage(selectedCharacter);
+  window.location.reload();
 }
 
 // 로그인 후 화면 표시

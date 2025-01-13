@@ -13,14 +13,13 @@
   </head>
 
   <body>
+    <header>
+      <div id="soundbar">
+        <i class="play-pause fa-solid fa-play"></i>
+        <audio class="audio-player" src="music/frieren_ost1.mp3"></audio>
+      </div>
+    </header>
   <main>
-    <div id="soundbar">
-      <i class="prev-track fa-solid fa-backward"></i>
-      <i class="play-pause fa-solid fa-play"></i>
-      <i class="next-track fa-solid fa-forward"></i>
-      <audio id="intro-audio" class="audio-player" src="music/frieren_ost1.mp3" autoplay></audio>
-    </div>
-
     <div id="before-login" class="hidden">
       <h1>용사여, 당신은 누구인가요?</h1>
 
@@ -111,7 +110,7 @@
     <button id="next" class="arrow">▶</button>
 </div>
 
-<div id="intro">
+<div id="intro" class="hidden">
   <div class="first-intro">
     <span>장송의 프리렌</span>
     <span>Frieren</span>
@@ -125,6 +124,7 @@
     <span>A new journey begins</span>
   </div>
 </div>
+
     <!-- 스크립트 -->
     <script src="js/greetings.js"></script>
     <script src="js/intro.js"></script>

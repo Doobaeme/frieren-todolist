@@ -69,17 +69,14 @@
 
 @keyframes text-focus-in {
   0% {
-    -webkit-filter: blur(12px);
     filter: blur(12px);
     opacity: 0;
   }
   30% {
-    -webkit-filter: blur(0px);
     filter: blur(0px);
     opacity: 1;
   }
   100% {
-    -webkit-filter: blur(0px);
     filter: blur(0px);
     opacity: 0;
   }
