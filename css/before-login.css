@@ -16,7 +16,35 @@
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
+.character-img img {
+  width: 100px;
+  height: 100px;
+  margin-left: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  cursor: pointer;
+  border-radius: 50%;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.character-img img:first-child {
+  margin: 0;
+}
+
+.character-img img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.character-img img.selected {
+  transform: scale(1.2);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.7);
+  border: 3px solid rgba(255, 215, 0, 0.8);
+  border-radius: 50%;
+}
+
 .login-form {
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;

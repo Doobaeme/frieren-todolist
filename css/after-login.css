@@ -5,10 +5,21 @@
 #after-login {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   color: white;
+}
+
+.left-column {
+  margin-left: 200px;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  margin-right: 400px;
 }
 
 .time {
@@ -32,7 +43,7 @@
 .todo-form input {
   outline: none;
   background: none;
-  text-align: center;
+  text-align: right;
   font-size: 20px;
   color: white;
   border-width: 0 0 2px;
@@ -40,7 +51,7 @@
 }
 
 .todo-form input::placeholder {
-  text-align: center;
+  text-align: right;
   color: rgba(255, 255, 255, 0.8);
   padding-bottom: 3px;
 }
@@ -50,13 +61,17 @@
   background-color: rgba(255, 255, 255, 0.8);
   font-size: 18px;
   font-weight: 600;
-  width: 400px;
+  width: 380px;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 15px;
+  align-items: flex-end;
+  padding: 15px 20px;
+}
+
+.todo-list li {
+  width: 360px;
 }
 
 .todo-list button {
@@ -67,7 +82,7 @@
 
 .quote {
   margin-top: 50px;
-  text-align: center;
+  text-align: right;
   font-size: 18px;
 }
 
@@ -89,6 +104,10 @@
 
 .quote span:nth-of-type(2) {
   font-size: 14px;
+}
+
+.quote span:last-of-type {
+  margin-top: 10px;
 }
 
 .weather {

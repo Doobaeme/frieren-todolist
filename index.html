@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/before-login.css">
     <link rel="stylesheet" href="css/after-login.css">
     <link rel="stylesheet" href="css/soundbar.css">
-    <title>Momentum App</title>
+    <title>여정의 발자취</title>
   </head>
 
   <body>
@@ -23,6 +23,15 @@
 
     <div id="before-login" class="hidden">
       <h1>용사여, 당신은 누구인가요?</h1>
+
+      <div class="character-img">
+        <img src="https://frieren-anime.jp/wp-content/uploads/2023/08/chara1_thumb.png" alt="frieren">
+        <img src="https://frieren-anime.jp/wp-content/uploads/2023/08/chara2_thumb.png" alt="fern">
+        <img src="https://frieren-anime.jp/wp-content/uploads/2023/08/chara3_thumb.png" alt="stark">
+        <img src="https://frieren-anime.jp/wp-content/uploads/2023/08/chara4_thumb.png" alt="himmel">
+        <img src="https://frieren-anime.jp/wp-content/uploads/2023/08/chara5_thumb.png" alt="heiter">
+        <img src="https://frieren-anime.jp/wp-content/uploads/2023/08/chara6_thumb-1.png" alt="eisen">
+      </div>
 
     <form class="login-form">
       <input
@@ -42,6 +51,15 @@
     </div>
 
     <div id="after-login" class="hidden">
+      <div class="left-column">
+        <img class="hidden" src="https://frieren-anime.jp/wp-content/uploads/2023/08/chara1_full1.png" alt="frieren">
+        <img class="hidden" src="https://frieren-anime.jp/wp-content/uploads/2023/08/chara2_full1.png" alt="fern">
+        <img class="hidden" src="https://frieren-anime.jp/wp-content/uploads/2023/08/chara3_full1.png" alt="stark">
+        <img class="hidden" src="https://frieren-anime.jp/wp-content/uploads/2023/08/chara4_full1.png" alt="himmel">
+        <img class="hidden" src="https://frieren-anime.jp/wp-content/uploads/2023/08/chara5_full1.png" alt="heiter">
+        <img class="hidden" src="https://frieren-anime.jp/wp-content/uploads/2023/08/chara6_full1-1.png" alt="eisen">
+      </div>
+      <div class="right-column">
       <div class="time">
         <span>여행자의 시간</span>
       <span class="clock">00:00:00</span>
@@ -65,11 +83,11 @@
       <div class="quote">
         <span class="kr-quot"></span>
         <span class="jp-quot"></span>
-        <br>
         <span class="author"></span>
       </div>
 
       <button class="logout_button">여정 종료</button>
+    </div>
     </div>
   </main>
 
@@ -94,18 +112,19 @@
 </div>
 
 <div id="intro">
-  <div class="first-intro hidden">
+  <div class="first-intro">
     <span>장송의 프리렌</span>
     <span>Frieren</span>
   </div>
-  <div class="second-intro hidden">
+  <div class="second-intro">
     <span>여정의 끝에서</span>
     <span>Beyond Journey's End</span>
   </div>
-  <div class="last-intro hidden">
+  <div class="last-intro">
     <span>새로운 여정이 시작된다</span>
     <span>A new journey begins</span>
   </div>
+</div>
     <!-- 스크립트 -->
     <script src="js/greetings.js"></script>
     <script src="js/intro.js"></script>

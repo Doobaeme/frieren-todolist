@@ -41,6 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   observer.observe(intro);
 
+  // 사용자 상호작용 감지
+  document.addEventListener("click", () => (userInteracted = true), {
+    once: true,
+  });
+
   // 이벤트 리스너
   playPauseButton.addEventListener("click", () =>
     audioPlayer.paused ? audioPlayer.play() : audioPlayer.pause()
