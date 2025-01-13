@@ -8,11 +8,19 @@
     <link rel="stylesheet" href="css/background.css" />
     <link rel="stylesheet" href="css/before-login.css">
     <link rel="stylesheet" href="css/after-login.css">
+    <link rel="stylesheet" href="css/soundbar.css">
     <title>Momentum App</title>
   </head>
 
   <body>
   <main>
+    <div id="soundbar">
+      <i class="prev-track fa-solid fa-backward"></i>
+      <i class="play-pause fa-solid fa-play"></i>
+      <i class="next-track fa-solid fa-forward"></i>
+      <audio class="audio-player" src="music/frieren_ost1.mp3" autoplay></audio>
+    </div>
+
     <div id="before-login" class="hidden">
       <h1>용사여, 당신은 누구인가요?</h1>
 
@@ -107,6 +115,8 @@
     <script src="js/background.js"></script>
     <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
+    <script src="js/soundbar.js"></script>
+    <script src="https://kit.fontawesome.com/d67964558f.js" crossorigin="anonymous"></script>
   </body>
 
 </html>

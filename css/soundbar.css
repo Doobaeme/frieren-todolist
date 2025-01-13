@@ -1,0 +1,25 @@
+#soundbar {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  padding: 8px 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+#soundbar i {
+  color: white;
+  font-size: 18px;
+  margin: 0 8px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#soundbar i:hover {
+  color: #ffcc00;
+}
