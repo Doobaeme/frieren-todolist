@@ -14,8 +14,17 @@ const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
 const CHARACTER_KEY = "character";
 
-// 유효성 검사 정규식 (영어, 한글, 특수문자(@, -, _)만 허용, 공백 차단)
-const VALID_INPUT_REGEX = /^[a-zA-Z가-힣@_\-]*$/;
+// 유효하지 않은 입력 차단 로직 (영어, 한글, 특수문자(@, -, _)만 허용, 공백 차단)
+function handleInvalidInput(event) {
+  const VALID_INPUT_REGEX = /^[a-zA-Z가-힣@_\-]*$/; // 유효성 검사 정규식
+  const key = event.key;
+  const isValidKey =
+    VALID_INPUT_REGEX.test(key) || key === "Backspace" || key === "Delete";
+
+  if (!isValidKey) {
+    event.preventDefault(); // 잘못된 입력 차단
+  }
+}
 
 // 캐릭터 이미지 클릭 이벤트
 characterImages.forEach((img) => {
@@ -88,17 +97,7 @@ if (savedUsername === null) {
   beforeContents.classList.remove(HIDDEN_CLASSNAME);
   afterContents.classList.add(HIDDEN_CLASSNAME);
   loginForm.addEventListener("submit", onLoginSubmit);
-
-  // 입력값 제한: 유효하지 않은 문자는 입력 차단
-  loginInput.addEventListener("keydown", (event) => {
-    const key = event.key;
-    const isValidKey =
-      VALID_INPUT_REGEX.test(key) || key === "Backspace" || key === "Delete";
-
-    if (!isValidKey) {
-      event.preventDefault(); // 잘못된 입력 차단
-    }
-  });
+  loginInput.addEventListener("keydown", handleInvalidInput);
 } else {
   beforeContents.classList.add(HIDDEN_CLASSNAME);
   afterContents.classList.remove(HIDDEN_CLASSNAME);

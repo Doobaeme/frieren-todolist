@@ -1,3 +1,37 @@
+.intro-play {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-play:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.intro-play:hover {
+  box-shadow: 3px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.intro-play span {
+  padding-top: 4px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: "국립박물관문화재단클래식B";
+}
+
 #intro {
   margin: 0;
   padding: 0;

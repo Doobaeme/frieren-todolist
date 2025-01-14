@@ -7,8 +7,10 @@ const quotes = [
   },
   {
     jpQuote: "ほんの少しでいい。誰かの人生を変えてあげればいい。",
-    krQuote:
-      "조금이라도 좋으니까, 누군가의 인생을 바꿀 수 있다면 그걸로 충분해.",
+    krQuote: `
+    조금이라도 좋으니까,
+    누군가의 인생을 바꿀 수 있다면 그걸로 충분해.
+    `,
     author: "- 힘멜 ヒンメル",
   },
   {
@@ -34,32 +36,48 @@ const quotes = [
   {
     jpQuote:
       "相手に貸しを作ってしまったら本当の意味で助けたことにはならないだろう。",
-    krQuote:
-      "상대방에게 빚을 지게 만든다면, 그것은 진정한 의미에서 도운 것이 되지 않을 거야.",
+    krQuote: `
+    상대방에게 빚을 지게 만든다면,
+    그것은 진정한 의미에서 도운 것이 되지 않을 거야.
+    `,
     author: "- 힘멜 ヒンメル",
   },
   {
-    jpQuote:
-      "人間の寿命は短いってわかっていたのに……なんでもっと知ろうと思わなかったんだろう……",
-    krQuote:
-      "인간의 수명이 짧다는 것을 알고 있었는데... 왜 더 알고 싶다고 생각하지 않았을까...",
+    jpQuote: `
+    人間の寿命は短いってわかっていたのに……
+    なんでもっと知ろうと思わなかったんだろう……
+    `,
+    krQuote: `
+    인간의 수명이 짧다는 것을 알고 있었는데...
+    왜 더 알고 싶다고 생각하지 않았을까...
+    `,
     author: "- 프리렌 フリーレン",
   },
   {
     jpQuote: "必死に生きてきた人の行きつく先が無であっていいはずがありません。",
-    krQuote: "필사적으로 살아온 사람이 도달하는 끝이 '무(無)'일 리가 없습니다.",
+    krQuote: `
+    필사적으로 살아온 사람이 도달하는 끝이
+    '무(無)'일 리가 없습니다.
+    `,
     author: "- 하이터 ハイター",
   },
   {
-    jpQuote:
-      "怖がることは悪いことではない。この恐怖が俺をここまで連れてきたんだ。",
-    krQuote:
-      "두려워하는 것은 나쁜 일이 아니야. 이 두려움이 나를 여기까지 이끌어 준 거야.",
+    jpQuote: `
+    怖がることは悪いことではない。
+    この恐怖が俺をここまで連れてきたんだ。
+    `,
+    krQuote: `
+    두려워하는 것은 나쁜 일이 아니야.
+    이 두려움이 나를 여기까지 이끌어 준 거야.
+    `,
     author: "- 아이젠 アイゼン",
   },
   {
     jpQuote: "想いってのは言葉にしないと伝わらないんだぜ。",
-    krQuote: "마음이라는 건 말로 표현하지 않으면 전해지지 않는 거야.",
+    krQuote: `
+    마음이라는 건
+    말로 표현하지 않으면 전해지지 않는 거야.
+    `,
     author: "- 자인 ザイン",
   },
 ];
@@ -78,9 +96,9 @@ function updateQuote() {
   });
 
   setTimeout(() => {
-    jpQuote.textContent = randomQuote.jpQuote;
-    krQuote.textContent = randomQuote.krQuote;
-    author.textContent = randomQuote.author;
+    jpQuote.innerText = randomQuote.jpQuote;
+    krQuote.innerText = randomQuote.krQuote;
+    author.innerText = randomQuote.author;
 
     quoteElements.forEach((el) => {
       el.classList.remove("fade-out");
