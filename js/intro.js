@@ -10,7 +10,7 @@ if (!introShown) {
   setTimeout(() => {
     intro.classList.add(HIDDEN_CLASSNAME);
     localStorage.setItem(INTRO_SHOWN_KEY, "true");
-  }, 11000);
+  }, 14000);
 } else {
   intro.classList.add(HIDDEN_CLASSNAME);
 }
@@ -21,5 +21,5 @@ introButton.addEventListener("click", () => {
   intro.classList.remove(HIDDEN_CLASSNAME);
   setTimeout(() => {
     intro.classList.add(HIDDEN_CLASSNAME);
-  }, 11000);
+  }, 14000);
 });

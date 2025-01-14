@@ -36,6 +36,7 @@
 #after-login h2 {
   font-size: 40px;
   text-shadow: 0 0 5px white;
+  text-align: right;
 }
 
 .todo-form input {
