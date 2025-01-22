@@ -6,9 +6,9 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   color: white;
-  margin: 0 400px 0 250px;
+  margin: 0 100px 0 0;
 }
 
 .right-column {
@@ -17,6 +17,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
+  padding-left: 100px;
 }
 
 .time {

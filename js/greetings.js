@@ -22,7 +22,7 @@ function handleInvalidInput(event) {
     VALID_INPUT_REGEX.test(key) || key === "Backspace" || key === "Delete";
 
   if (!isValidKey) {
-    event.preventDefault(); // 잘못된 입력 차단
+    event.preventDefault();
   }
 }
 
@@ -76,19 +76,30 @@ function onLoginSubmit(event) {
 // 로그인 후 화면 표시
 function paintGreetings(username) {
   const selectedCharacter = localStorage.getItem(CHARACTER_KEY);
-  greeting.innerText = `용사 ${username}의 여정 기록...`;
+  if (username.length > 5) {
+    greeting.innerText = `용사 ${username}의\n여정 기록...`;
+  } else {
+    greeting.innerText = `용사 ${username}의 여정 기록...`;
+  }
   displayCharacterImage(selectedCharacter);
   logOut.addEventListener("click", clickLogOut);
 }
 
 // 초기 상태 확인
 const savedUsername = localStorage.getItem(USERNAME_KEY);
-const savedCharacter = localStorage.getItem(CHARACTER_KEY);
+let savedCharacter = localStorage.getItem(CHARACTER_KEY);
+
+if (!savedCharacter) {
+  savedCharacter = "frieren";
+  localStorage.setItem(CHARACTER_KEY, savedCharacter);
+}
 
 if (savedCharacter) {
   characterImages.forEach((img) => {
     if (img.alt === savedCharacter) {
       img.classList.add("selected");
+    } else {
+      img.classList.remove("selected");
     }
   });
 }
